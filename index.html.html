@@ -1,114 +1,171 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Tech4Students</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #0d0d1a;
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap');
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body, html {
       margin: 0;
       padding: 0;
-      color: #ffffff;
+      font-family: 'Orbitron', sans-serif;
+      background: #000;
+      color: #fff;
+      overflow-x: hidden;
     }
 
-    .container {
-      text-align: center;
-      padding: 50px;
+    .background {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: radial-gradient(circle at center, #00f2ff 0%, #001d3d 100%);
+      z-index: -1;
+      animation: pulse 8s ease-in-out infinite;
     }
 
-    .logo {
-      width: 150px;
-      margin-bottom: 20px;
+    @keyframes pulse {
+      0%, 100% { filter: brightness(1); }
+      50% { filter: brightness(1.4); }
     }
 
-    h1 {
-      font-size: 36px;
-      color: #00bfff;
-    }
-
-    .card-container {
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(10px);
+      padding: 10px 20px;
       display: flex;
       justify-content: center;
-      gap: 30px;
-      margin-top: 40px;
-      flex-wrap: wrap;
+      z-index: 10;
     }
 
-    .card {
-      background-color: #007bff;
-      color: white;
-      padding: 20px 30px;
+    nav a {
+      color: #0ff;
+      margin: 0 15px;
       text-decoration: none;
-      border-radius: 8px;
-      transition: background-color 0.3s;
-      min-width: 150px;
+      font-weight: bold;
+      transition: color 0.3s;
     }
 
-    .card:hover {
-      background-color: #0056b3;
+    nav a:hover {
+      color: #fff;
+    }
+
+    header {
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    .title {
+      font-size: 4rem;
+      color: #0ff;
+      text-shadow:
+        0 1px 0 #0cc,
+        0 2px 0 #099,
+        0 3px 0 #066,
+        0 4px 10px rgba(0, 255, 255, 0.7);
+    }
+
+    main {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 20px;
     }
 
     section {
-      margin-top: 80px;
-      padding: 20px;
-      border-top: 1px solid #444;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 20px;
+      padding: 30px;
+      margin-bottom: 40px;
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+      transition: transform 0.3s;
     }
 
-    ul {
-      list-style-type: disc;
-      text-align: left;
-      max-width: 600px;
-      margin: 0 auto;
-      padding-left: 20px;
+    section:hover {
+      transform: translateY(-5px);
+    }
+
+    h2 {
+      color: #0ff;
+      border-bottom: 2px solid #0ff;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .instagram-note {
+      margin-top: 20px;
+      font-style: italic;
+      color: #aefeff;
+      border-left: 3px solid #0ff;
+      padding-left: 15px;
+    }
+
+    @media (max-width: 768px) {
+      .title {
+        font-size: 2.5rem;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      section {
+        padding: 20px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <img src="logo.png" alt="Logo Tech4Students" class="logo">
-    <h1>Tech4Students</h1>
-    <div class="card-container">
-      <a href="#chi-siamo" class="card">Chi siamo</a>
-      <a href="#servizi" class="card">Servizi</a>
-      <a href="#acquista" class="card">Acquista</a>
-    </div>
 
+  <div class="background"></div>
+
+  <nav>
+    <a href="#chi-siamo">Chi Siamo</a>
+    <a href="#servizi">Servizi</a>
+    <a href="#preassemblaggio">Preassemblaggio</a>
+  </nav>
+
+  <header>
+    <h1 class="title">Tech4Students</h1>
+  </header>
+
+  <main>
     <section id="chi-siamo">
-      <h2>Chi siamo</h2>
-      <p>Siamo ragazzi che , tramite la loro passione più grande , sperano di riuscire a rendere realtà il loro sogno più grande.
-
-      Siamo assolutamente trasparenti e , dato che non siamo esperti, rimborsiamo qualsiasi tipo di errore.
-
-      Siamo cresciuti con le mani nei computer , ma nonostante questo abbiamo molto da imparare e speriamo di crescere insieme a voi.
-
-      Abbiamo a cuore gli interessi dei nostri clienti, infatti offriamo anche consigli gratuiti e collaborazioni aperte.
-
-      abbiamo sede nel comune di Suzzara , provincia di Mantova.
-
-      Confidiamo in una crescita che ci permetta anche di proporre nostre invenzioni mirate ad appassionare le persone alla tecnologia.
-      </p>
+      <h2>Chi Siamo</h2>
+      <p>Tech4Students nasce con l'obiettivo di fornire soluzioni tecnologiche accessibili e avanzate per studenti di ogni livello. Siamo appassionati di innovazione, formazione e supporto personalizzato.</p>
     </section>
 
     <section id="servizi">
       <h2>Servizi</h2>
-      <ul>
-        <li>Consigli gratuiti:  Domande che aiutano sia noi che voi ad espandere la nostra conoscenza.</li>
-        <li>Servizi hardware: Interventi di riparazione di qualsiasi tipo di dispositivo.</li>
-      </ul>
+      <p>Offriamo consulenze personalizzate, configurazioni PC su misura, supporto tecnico hardware e software, corsi formativi e molto altro. Tech4Students ti accompagna in ogni fase del tuo percorso digitale.</p>
     </section>
 
-    <section id="acquista">
-      <h2>Acquista</h2>
-      <ul>
-        <li>Compra componenti elettroniche da noi: Sul nostro profilo instagram saranno presenti post con oggetti in vendita. Dacci un'occhiata!'</li>
-        <li>Preassemblare un computer a tue spese: A seconda delle esigenze , proponiamo ed eventualmente effettuiamo build specifiche.</li>
-      </ul>
+    <section id="preassemblaggio">
+      <h2>Preassemblaggio</h2>
+      <p>Proponiamo PC preassemblati ottimizzati per studio, gaming e produttività. I nostri modelli sono testati, pronti all’uso e aggiornati alle ultime tecnologie, garantendo performance elevate a costi accessibili.</p>
+
+      <div class="instagram-note">
+        Segui la nostra pagina Instagram per scoprire i post con le build base già assemblate e disponibili per l’acquisto.
+      </div>
     </section>
-  </div>
+  </main>
+
 </body>
-</html>
-<!DOCTYPE HTML>
+</html><!DOCTYPE HTML>
 
 <html>
 
